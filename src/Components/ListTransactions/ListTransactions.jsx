@@ -40,7 +40,7 @@ function ListTransactions() {
               <tr>
                 <th>No</th>
                 <th>Users</th>
-                {/* <th>Bukti Transfer</th> */}
+                <th>Email</th>
                 <th>Remaining Active</th>
                 {/* <th>Status Users</th> */}
                 <th>Status Payment</th>
@@ -71,10 +71,20 @@ function ListTransactions() {
                   <tr>
                     <td>{item.id}</td>
                     <td>{item.user.fullname}</td>
-                    {/* <td>image</td> */}
+                    <td>{item.user.email}</td>
                     <td> {duedate}/ Hari</td>
                     {/* <td className="text-success">item.user.subscribe</td> */}
-                    <td className="text-success fw-bold">{item.status}</td>
+                    <td
+                      className={`${
+                        item.status === "pending"
+                          ? "text-warning"
+                          : item.status === "success"
+                          ? "text-success"
+                          : "text-danger"
+                      } fw-bold`}
+                    >
+                      {item.status}
+                    </td>
                     <td>
                       <Dropdown>
                         <Dropdown.Toggle
