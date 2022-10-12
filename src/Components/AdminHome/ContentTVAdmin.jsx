@@ -8,10 +8,14 @@ import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { API } from "../../config/api";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../context/context";
 // import data from "../data/datatvshows.json";
 
 function ContentTVAdmin(props) {
   const [dataFilm, setDataFilm] = useState();
+  const [state] = useContext(UserContext);
+  console.log(state);
 
   const Navigate = useNavigate();
   let { data: films } = useQuery("filmsCacheAdmin", async () => {
@@ -32,9 +36,9 @@ function ContentTVAdmin(props) {
     if (films) getFilmByCategoryId();
   }, [films]);
 
-  const handleDetail = (id) => {
-    Navigate("/adminmoviedetails/" + id);
-  };
+  // const handleDetail = (id) => {
+  //   Navigate("/adminmoviedetails/" + id);
+  // };
   return (
     <div className="container tv-admin-container" style={{ height: "75vh" }}>
       <div className="content_row">

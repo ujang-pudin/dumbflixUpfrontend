@@ -56,7 +56,7 @@ function AdminTVContentDetails() {
       </div> */}
 
       <div className="row">
-        <div className="col-md-3 mb-3">
+        <div className="col mb-3">
           <img
             className="img"
             src={films?.thumbnailfilm}
@@ -65,7 +65,7 @@ function AdminTVContentDetails() {
           />
         </div>
 
-        <div className="col-md-3">
+        <div className="col">
           <h2>{films?.title}</h2>
           <div>
             <span className="me-3 fw-lighter">{films?.year}</span>
@@ -79,7 +79,7 @@ function AdminTVContentDetails() {
           <p className="detail_desc">{films?.description}</p>
         </div>
 
-        <div className="col-md-6">
+        <div className="col">
           <div className="mb-4 me-4 pe-3 text-end">
             <button className="btn btn-danger" onClick={showModal}>
               Add Episode

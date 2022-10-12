@@ -7,12 +7,15 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { API } from "../../config/api";
+import { useContext } from "react";
+import { UserContext } from "../../context/context";
 // import { useNavigate } from "react-router-dom";
 // import { UserContext } from "../../context/context";
 // import data from "../data/datatvshows.json";
 
 function ContentTV(props) {
   const [dataFilm, setDataFilm] = useState();
+  const [state] = useContext(UserContext);
 
   let { data: films } = useQuery("filmsCache", async () => {
     const response = await API.get("/film");
@@ -54,21 +57,35 @@ function ContentTV(props) {
             {dataFilm?.map((item, id) => {
               return (
                 <SwiperSlide>
-                  <Link
-                    to={"/movies/" + item.id}
-                    key={id}
-                    className="card_item"
-                  >
-                    <img
-                      className="img_size_tv_home"
-                      // src={require("../../Images/default.png")}
+                  {state.isLogin ? (
+                    <Link
+                      to={"/movies/" + item.id}
+                      key={id}
+                      className="card_item"
+                    >
+                      <img
+                        className="img_size_tv_home"
+                        // src={require("../../Images/default.png")}
 
-                      src={item.thumbnailfilm}
-                      alt="img_size"
-                    />
-                    <h5 className="mt-3">{item.title}</h5>
-                    <p className="fw-lighter">{item.year}</p>
-                  </Link>
+                        src={item.thumbnailfilm}
+                        alt="img_size"
+                      />
+                      <h5 className="mt-3">{item.title}</h5>
+                      <p className="fw-lighter">{item.year}</p>
+                    </Link>
+                  ) : (
+                    <>
+                      <img
+                        className="img_size_tv_home"
+                        // src={require("../../Images/default.png")}
+
+                        src={item.thumbnailfilm}
+                        alt="img_size"
+                      />
+                      <h5 className="mt-3">{item.title}</h5>
+                      <p className="fw-lighter">{item.year}</p>{" "}
+                    </>
+                  )}
                 </SwiperSlide>
               );
             })}
