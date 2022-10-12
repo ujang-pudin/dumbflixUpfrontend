@@ -100,7 +100,10 @@ const AdminAddMovies = () => {
 
   // console.log(form);
   return (
-    <div className="admin-add-movie-body">
+    <div
+      className="admin-add-movie-body"
+      style={{ background: "black", heigh: "100vh" }}
+    >
       <TopNavbarAdmin />
       <div className="" style={{ background: "black", heigh: "100vh" }}>
         <Form className="w-75 mx-auto" onSubmit={(e) => handleSubmit.mutate(e)}>
