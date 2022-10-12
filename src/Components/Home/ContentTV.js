@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { API } from "../../config/api";
-import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../context/context";
+// import { useNavigate } from "react-router-dom";
+// import { UserContext } from "../../context/context";
 // import data from "../data/datatvshows.json";
 
 function ContentTV(props) {

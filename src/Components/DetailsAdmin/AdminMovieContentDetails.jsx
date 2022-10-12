@@ -12,20 +12,13 @@ import { Navigation } from "swiper";
 import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import { API } from "../../config/api";
-import { useContext } from "react";
-import { UserContext } from "../../context/context";
 
 function AdminMovieContentDetails() {
   const [modalShow, setModalShow] = React.useState(false);
-  const [state, dispatch] = useContext(UserContext);
 
   function showModal() {
     setModalShow(true);
   }
-
-  const handleBackMovies = () => {
-    Navigate("/addlistpage");
-  };
 
   let Navigate = useNavigate();
   let { id } = useParams();

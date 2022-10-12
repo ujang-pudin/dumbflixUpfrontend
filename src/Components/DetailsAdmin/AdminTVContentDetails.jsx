@@ -37,7 +37,7 @@ function AdminTVContentDetails() {
     return response.data.data;
   });
 
-  // console.log(films);
+  console.log("ini data film tv" + films);
 
   return (
     <div className="container">
@@ -73,7 +73,7 @@ function AdminTVContentDetails() {
               className="btn btn-outline-light btn-sm"
               onClick={() => Navigate("/addlistpage")}
             >
-              {films?.category.name}
+              {films?.category?.name}
             </button>
           </div>
           <p className="detail_desc">{films?.description}</p>

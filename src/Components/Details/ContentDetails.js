@@ -18,10 +18,6 @@ import { UserContext } from "../../context/context";
 function AdminMovieContentDetails() {
   const [modalShow, setModalShow] = React.useState(false);
 
-  function showModal() {
-    setModalShow(true);
-  }
-
   const handleBackMovies = () => {
     Navigate("/addlistpage");
   };
@@ -51,7 +47,7 @@ function AdminMovieContentDetails() {
       </div>
 
       <div className="row">
-        <div className="col-md-3 mb-3">
+        <div className="col mb-3">
           <img
             className="img"
             src={films?.thumbnailfilm}
@@ -60,7 +56,7 @@ function AdminMovieContentDetails() {
           />
         </div>
 
-        <div className="col-md-3">
+        <div className="col">
           <h2>{films?.title}</h2>
           <div>
             <span className="me-3 fw-lighter">{films?.year}</span>
@@ -74,19 +70,19 @@ function AdminMovieContentDetails() {
           <p className="detail_desc">{films?.description}</p>
         </div>
 
-        <div className="col-md-6">
-          <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-            <SwiperSlide>
-              <div className="carousel-item active">
-                <img
-                  src={require("../../Images/default.png")}
-                  className="d-block w-100 img"
-                  alt="..."
-                />
-                <p className="text-center mt-2">Playing Now!</p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+        <div className="col">
+          {/* <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            <SwiperSlide> */}
+          <div className="carousel-item active">
+            <img
+              src={require("../../Images/default.png")}
+              className="d-block w-100 img"
+              alt="..."
+            />
+            <p className="text-center mt-2">Playing Now!</p>
+          </div>
+          {/* </SwiperSlide>
+          </Swiper> */}
         </div>
       </div>
     </div>
