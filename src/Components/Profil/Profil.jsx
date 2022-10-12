@@ -20,7 +20,7 @@ export default function Profil() {
       <TopNavbar />
       <div
         style={{
-          height: "92vh",
+          height: "102vh",
           paddingTop: "3.5rem",
           backgroundColor: "#2f2f2f",
         }}
