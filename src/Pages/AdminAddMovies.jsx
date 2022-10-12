@@ -102,7 +102,7 @@ const AdminAddMovies = () => {
   return (
     <div className="admin-add-movie-body">
       <TopNavbarAdmin />
-      <div className="">
+      <div className="" style={{ background: "black", heigh: "100vh" }}>
         <Form className="w-75 mx-auto" onSubmit={(e) => handleSubmit.mutate(e)}>
           <h2 className="admin-add-movie-title py-4">Add Film</h2>
           <Row className="mb-3">
